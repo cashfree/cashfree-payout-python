@@ -73,7 +73,7 @@ request for a payout transfer and get the transfer status.
 
 run the following command in the terminal to run the script:
 ```
-  python index.py
+  python app.py
 ```
 
 You can change the necessary values in the app.py file as per your requirements and re run the script whenever needed.
