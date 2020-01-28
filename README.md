@@ -16,6 +16,8 @@ The following kit contains the following functionalities:
     <li> Transfers.request_transf: to create a payout transfer.
     <li> getTransferStatus: to get payout transfer status.
     </ol>
+<br/>
+You can get more information on the python sdk [here](https://github.com/cashfree/cashfree-sdk-python).
 
 ## Build Steps
 
