@@ -1,5 +1,5 @@
 from cashfree_sdk.payouts import Payouts
-from cashfree_sdk.payouts.beneficiary import Benefeciary
+from cashfree_sdk.payouts.beneficiary import Beneficiary
 from cashfree_sdk.payouts.transfers import Transfers
 
 clientId = "clientId"
@@ -30,11 +30,11 @@ transfer = {
 
 try:
     Payouts.init(clientId, clientSecret, "TEST")
-    bene_add_response = Benefeciary.add(**bene)
+    bene_add_response = Beneficiary.add(**bene)
     print("beneficiary addition response")
     print(bene_add_response.content)
 
-    bene_details_response = Benefeciary.get_bene_details(bene["beneId"])
+    bene_details_response = Beneficiary.get_bene_details(bene["beneId"])
     print("get beneficary details")
     print(bene_details_response.content)
 
