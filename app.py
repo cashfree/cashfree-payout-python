@@ -1,9 +1,12 @@
+import json
+
 from cashfree_sdk.payouts import Payouts
 from cashfree_sdk.payouts.beneficiary import Beneficiary
 from cashfree_sdk.payouts.transfers import Transfers
 
 clientId = "clientId"
 clientSecret = "clientSecret"
+env = "TEST"
 
 beneId =  "JOHN1801290915"
 transferId = "tranfer001232347"
@@ -29,10 +32,17 @@ transfer = {
 
 
 try:
-    Payouts.init(clientId, clientSecret, "TEST")
-    bene_add_response = Beneficiary.add(**bene)
-    print("beneficiary addition response")
-    print(bene_add_response.content)
+    Payouts.init(clientId, clientSecret, env)
+
+    bene_details_response = Beneficiary.get_bene_details(bene["beneId"])
+    bene_details_response_content = json.loads(bene_details_response.content)
+    print("get beneficary details")
+    print(bene_details_response_content)
+
+    if(bene_details_response_content['status'] == 'ERROR' and bene_details_response_content['subCode'] == '404' and bene_details_response_content['message'] == 'Beneficiary does not exist'):
+        bene_add_response = Beneficiary.add(**bene)
+        print("beneficiary addition response")
+        print(bene_add_response.content)
 
     bene_details_response = Beneficiary.get_bene_details(bene["beneId"])
     print("get beneficary details")
