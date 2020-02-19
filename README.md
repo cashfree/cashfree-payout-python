@@ -64,7 +64,7 @@ the request transfer object is read from the app.py file under the transfer obje
 Required Fields are:
   1. beneId: beneficiaryId to whom the transfer must be made to.
   2. amount: amount to be transferred.
-  3. trasnferId: unique transfer id to identify the transfer.
+  3. transferId: unique transfer id to identify the transfer.
 
 
 ## Usage
