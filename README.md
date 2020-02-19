@@ -33,18 +33,18 @@ follow the following build steps to compile the Integration kit:
 ### Pre Requisites:
 The following kit uses information stored in the app.py file. Before running the code for the first time open the app.py file
 and add the relevant details:
-  1. ClientId: This is a unique identifier that identifies the merchant. For more information please go [here](https://dev.cashfree.com/payouts/integrations/pre-requisites#credentials).
-  2. ClientSecret: Corresponding secret key for the given ClientId that helps Cashfree identify the merchant. For more information please go [here](https://dev.cashfree.com/payouts/integrations/pre-requisites#credentials).
+  1. ClientId: This is a unique identifier that identifies the merchant. For more information please go [here](https://dev.cashfree.com/development/api/credentials).
+  2. ClientSecret: Corresponding secret key for the given ClientId that helps Cashfree identify the merchant. For more information please go [here](https://dev.cashfree.com/development/api/credentials).
   3. Environment: Environment to be hit. The following values are accepted prod: for production, test: for test environment. Pass this parameter to the init function
 
 ### IP Whitelisting:
 
-Your IP has to be whitelisted to hit Cashfree's server. For more information please go [here](https://dev.cashfree.com/payouts/integrations/pre-requisites#ip).
+Your IP has to be whitelisted to hit Cashfree's server. For more information please go [here](https://dev.cashfree.com/development/api/ip-whitelisting).
 
 ### Beneficiary:
-The following kit needs beneficiary details in order to create a beneficiary and fetch its details. For more information on Beneficiaries please go [here](https://dev.cashfree.com/payouts/integrations/standard-transfer#beneficiary)
+The following kit needs beneficiary details in order to create a beneficiary and fetch its details. For more information on Beneficiaries please go [here](https://dev.cashfree.com/api-reference/payouts-api#beneficiary)
 
-The kit reads beneficiary details from the app.py file. Under the bene object. For a list of required fields go [here](https://dev.cashfree.com/api-reference/payouts-api#create-beneficiary).
+The kit reads beneficiary details from the app.py file. Under the bene object. For a list of required fields go [here](https://dev.cashfree.com/api-reference/payouts-api#add-beneficiary).
 Sample Fields to add a beneficiary using bankAccount and ifsc:
   1. beneId: uniqueId of the created beneficiary.
   2. name: beneficiary name.
