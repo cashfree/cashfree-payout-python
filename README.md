@@ -35,7 +35,7 @@ The following kit uses information stored in the app.py file. Before running the
 and add the relevant details:
   1. ClientId: This is a unique identifier that identifies the merchant. For more information please go [here](https://dev.cashfree.com/development/api/credentials).
   2. ClientSecret: Corresponding secret key for the given ClientId that helps Cashfree identify the merchant. For more information please go [here](https://dev.cashfree.com/development/api/credentials).
-  3. Environment: Environment to be hit. The following values are accepted prod: for production, test: for test environment. Pass this parameter to the init function
+  3. Environment: Environment to be hit. The following values are accepted prod: for production, test: for the test environment. Pass this parameter to the init function
 
 ### IP Whitelisting:
 
@@ -61,7 +61,7 @@ Sample Fields to add a beneficiary using bankAccount and ifsc:
 To request a payout transfer certain information is needed. To get a better understanding of requesting a transfer go [here](https://dev.cashfree.com/api-reference/payouts-api#transfers).
 the request transfer object is read from the app.py file under the transfer object.
 
-Required Fields are:
+Required fields are:
   1. beneId: beneficiaryId to whom the transfer must be made to.
   2. amount: amount to be transferred.
   3. transferId: unique transfer id to identify the transfer.
