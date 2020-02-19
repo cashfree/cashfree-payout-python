@@ -13,8 +13,8 @@ The following kit contains the following functionalities:
     <li> init: to initialize the SDK.
     <li> Beneficiary.get_bene_details: to get beneficiary details/check if a beneficiary exists.
     <li> Beneficiary.add: to create beneficiaries.
-    <li> Transfers.request_transf: to create a payout transfer.
-    <li> getTransferStatus: to get payout transfer status.
+    <li> Transfers.request_transfer: to create a payout transfer.
+    <li> Transfers.get_transfer_status: to get payout transfer status.
     </ol>
 <br/>
 You can get more information on the python SDK [here](https://github.com/cashfree/cashfree-sdk-python).
