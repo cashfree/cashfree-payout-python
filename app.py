@@ -36,7 +36,7 @@ try:
 
     bene_details_response = Beneficiary.get_bene_details(bene["beneId"])
     bene_details_response_content = json.loads(bene_details_response.content)
-    print("get beneficary details")
+    print("get beneficiary details")
     print(bene_details_response_content)
 
     if(bene_details_response_content['status'] == 'ERROR' and bene_details_response_content['subCode'] == '404':
