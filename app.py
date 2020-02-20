@@ -1,3 +1,13 @@
+'''
+Below is an integration flow on how to use Cashfree's payouts SDK. The SDK can be found at: https://github.com/cashfree/cashfree-sdk-python
+Please go through the payout docs here: https://docs.cashfree.com/docs/payout/guide/
+The following script contains the following functionalities :
+    1. Beneficiary.get_bene_details -> get details of a beneficiary
+    2. Beneficiary.add -> add a beneficiary
+    3. Transfers.request_transfer -> request a transfer
+    4. Transfers.get_transfer_status -> get the status of a requested transfer
+'''
+
 import json
 
 from cashfree_sdk.payouts import Payouts
