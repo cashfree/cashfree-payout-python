@@ -39,14 +39,11 @@ try:
     print("get beneficary details")
     print(bene_details_response_content)
 
-    if(bene_details_response_content['status'] == 'ERROR' and bene_details_response_content['subCode'] == '404' and bene_details_response_content['message'] == 'Beneficiary does not exist'):
+    if(bene_details_response_content['status'] == 'ERROR' and bene_details_response_content['subCode'] == '404':
         bene_add_response = Beneficiary.add(beneId=bene['beneId'], name=bene['name'], email=bene['email'], phone=bene['phone'], bankAccount=bene['bankAccount'], ifsc=bene['ifsc'], address1=bene['address1'], city=bene['city'], state=bene['state'], pincode=bene['pincode'])
         print("beneficiary addition response")
         print(bene_add_response.content)
 
-    bene_details_response = Beneficiary.get_bene_details(bene["beneId"])
-    print("get beneficary details")
-    print(bene_details_response.content)
 
     request_transfer_response = Transfers.request_transfer(beneId=transfer['beneId'], transferId=transfer['transferId'], amount=transfer['amount'])
     print("request transfer response")
