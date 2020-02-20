@@ -1,6 +1,6 @@
 '''
 Below is an integration flow on how to use Cashfree's payouts SDK. The SDK can be found at: https://github.com/cashfree/cashfree-sdk-python
-Please go through the payout docs here: https://docs.cashfree.com/docs/payout/guide/
+Please go through the payout docs here: https://dev.cashfree.com/payouts
 The following script contains the following functionalities :
     1. Beneficiary.get_bene_details -> get details of a beneficiary
     2. Beneficiary.add -> add a beneficiary
