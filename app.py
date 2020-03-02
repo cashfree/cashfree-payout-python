@@ -3,12 +3,13 @@ import json
 from cashfree_sdk.payouts import Payouts
 from cashfree_sdk.payouts.beneficiary import Beneficiary
 from cashfree_sdk.payouts.transfers import Transfers
+from cashfree_sdk.exceptions.exceptions import BadRequestError,EntityDoesntExistError
 
-clientId = "clientId"
-clientSecret = "clientSecret"
+clientId = "client_id"
+clientSecret = "client_secret"
 env = "TEST"
 
-beneId =  "JOHN1801290915"
+beneId =  "JOHN180129091524352"
 transferId = "tranfer001232347"
 
 bene = {
@@ -16,7 +17,7 @@ bene = {
     "name": "john doe",
     "email": "johndoe@cashfree.com", 
     "phone": "9876543213",
-    "bankAccount": "00011020001772",
+    "bankAccount": "00011020001672",
     "ifsc": "HDFC0000001",  
     "address1" : "ABC Street", 
     "city": "Bangalore", 
@@ -33,13 +34,12 @@ transfer = {
 
 try:
     Payouts.init(clientId, clientSecret, env)
-
-    bene_details_response = Beneficiary.get_bene_details(bene["beneId"])
-    bene_details_response_content = json.loads(bene_details_response.content)
-    print("get beneficary details")
-    print(bene_details_response_content)
-
-    if(bene_details_response_content['status'] == 'ERROR' and bene_details_response_content['subCode'] == '404' and bene_details_response_content['message'] == 'Beneficiary does not exist'):
+    try:
+        bene_details_response = Beneficiary.get_bene_details(bene["beneId"])
+        bene_details_response_content = json.loads(bene_details_response.content)
+        print("get beneficary details")
+        print(bene_details_response_content)
+    except EntityDoesntExistError as err:
         bene_add_response = Beneficiary.add(beneId=bene['beneId'], name=bene['name'], email=bene['email'], phone=bene['phone'], bankAccount=bene['bankAccount'], ifsc=bene['ifsc'], address1=bene['address1'], city=bene['city'], state=bene['state'], pincode=bene['pincode'])
         print("beneficiary addition response")
         print(bene_add_response.content)
