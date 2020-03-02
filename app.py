@@ -1,3 +1,13 @@
+'''
+Below is an integration flow on how to use Cashfree's payouts SDK. The SDK can be found at: https://github.com/cashfree/cashfree-sdk-python
+Please go through the payout docs here: https://dev.cashfree.com/payouts
+The following script contains the following functionalities :
+    1. Beneficiary.get_bene_details -> get details of a beneficiary
+    2. Beneficiary.add -> add a beneficiary
+    3. Transfers.request_transfer -> request a transfer
+    4. Transfers.get_transfer_status -> get the status of a requested transfer
+'''
+
 import json
 
 from cashfree_sdk.payouts import Payouts
@@ -5,8 +15,8 @@ from cashfree_sdk.payouts.beneficiary import Beneficiary
 from cashfree_sdk.payouts.transfers import Transfers
 from cashfree_sdk.exceptions.exceptions import BadRequestError,EntityDoesntExistError
 
-clientId = "client_id"
-clientSecret = "client_secret"
+clientId = "CF6130FKDN0O61WFQMYUM"
+clientSecret = "d1141e574b7e3b1caf032ee7af3e4dbea3a61681"
 env = "TEST"
 
 beneId =  "JOHN180129091524352"
@@ -44,9 +54,6 @@ try:
         print("beneficiary addition response")
         print(bene_add_response.content)
 
-    bene_details_response = Beneficiary.get_bene_details(bene["beneId"])
-    print("get beneficary details")
-    print(bene_details_response.content)
 
     request_transfer_response = Transfers.request_transfer(beneId=transfer['beneId'], transferId=transfer['transferId'], amount=transfer['amount'])
     print("request transfer response")

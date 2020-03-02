@@ -13,8 +13,8 @@ The following kit contains the following functionalities:
     <li> init: to initialize the SDK.
     <li> Beneficiary.get_bene_details: to get beneficiary details/check if a beneficiary exists.
     <li> Beneficiary.add: to create beneficiaries.
-    <li> Transfers.request_transf: to create a payout transfer.
-    <li> getTransferStatus: to get payout transfer status.
+    <li> Transfers.request_transfer: to create a payout transfer.
+    <li> Transfers.get_transfer_status: to get payout transfer status.
     </ol>
 <br/>
 You can get more information on the python SDK [here](https://github.com/cashfree/cashfree-sdk-python).
@@ -35,7 +35,7 @@ The following kit uses information stored in the app.py file. Before running the
 and add the relevant details:
   1. ClientId: This is a unique identifier that identifies the merchant. For more information please go [here](https://dev.cashfree.com/development/api/credentials).
   2. ClientSecret: Corresponding secret key for the given ClientId that helps Cashfree identify the merchant. For more information please go [here](https://dev.cashfree.com/development/api/credentials).
-  3. Environment: Environment to be hit. The following values are accepted prod: for production, test: for test environment. Pass this parameter to the init function
+  3. Environment: Environment to be hit. The following values are accepted prod: for production, test: for the test environment. Pass this parameter to the init function
 
 ### IP Whitelisting:
 
@@ -50,7 +50,7 @@ Sample Fields to add a beneficiary using bankAccount and ifsc:
   2. name: beneficiary name.
   3. email: beneficiary email.
   4. phone: beneficiary phone.
-  5. bankAccount: beneficiary's bank account.
+  5. bankAccount: beneficiary bank account.
   6. ifsc: corresponding ifsc.
   7. address1: beneficiary address.
   8. city: beneficiary city.
@@ -61,10 +61,10 @@ Sample Fields to add a beneficiary using bankAccount and ifsc:
 To request a payout transfer certain information is needed. To get a better understanding of requesting a transfer go [here](https://dev.cashfree.com/api-reference/payouts-api#transfers).
 the request transfer object is read from the app.py file under the transfer object.
 
-Required Fields are:
+Required fields are:
   1. beneId: beneficiaryId to whom the transfer must be made to.
   2. amount: amount to be transferred.
-  3. trasnferId: unique transfer id to identify the transfer.
+  3. transferId: unique transfer id to identify the transfer.
 
 
 ## Usage
