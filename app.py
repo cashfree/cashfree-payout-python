@@ -15,8 +15,8 @@ from cashfree_sdk.payouts.beneficiary import Beneficiary
 from cashfree_sdk.payouts.transfers import Transfers
 from cashfree_sdk.exceptions.exceptions import BadRequestError,EntityDoesntExistError
 
-clientId = "CF6130FKDN0O61WFQMYUM"
-clientSecret = "d1141e574b7e3b1caf032ee7af3e4dbea3a61681"
+clientId = "client_id"
+clientSecret = "client_secret"
 env = "TEST"
 
 beneId =  "JOHN180129091524352"
